@@ -14,13 +14,20 @@
 </head>
 <body class="container">
     <h1 class="header">SQL generator <img class="imagesize" src="https://cdn2.iconfinder.com/data/icons/web-and-mobile-ui-volume-7/48/309-512.png" alt="SQL"></h1>
-
+    <br>
+    <h4>Enter start day and end day</h3>
     <form action="{{ url_for('handle_data') }}" method="post">
-        <input type="text" name="startday">
-        <input type="text" name="endday">
+        <div>
+            <label for="startday">Start Day</label>
+            <input type="text" name="startday" placeholder="x days after today">
+        </div>
+        <div>
+            <label for="endday">End Day</label>
+            <input type="text" name="endday" placeholder="x days after today">
+        </div>
         <input type="submit"class="btn btn-primary">
     </form>
-    
+
     <!-- JS CDNs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 </body>

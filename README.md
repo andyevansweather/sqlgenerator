@@ -19,6 +19,14 @@ pip install -r requirements.txt
 python3 app.py
 ```
 
+## Routes
+
+This serves on http://localhost:9988
+
+[Homepage link](http://localhost:9988/)
+
+[Also homepage, but redirected with post link](http://localhost:9988/handle_data)
+
 ### Intellij setup
 Project uses python 3
 Having followed the setup steps above, set the SDK for your project to be ```.env/Scripts/python.exe```
