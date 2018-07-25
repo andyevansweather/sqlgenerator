@@ -13,6 +13,12 @@ source .env/Scripts/activate
 pip install -r requirements.txt
 ```
 
+## Run the server locally
+
+```bash
+python3 app.py
+```
+
 ### Intellij setup
 Project uses python 3
 Having followed the setup steps above, set the SDK for your project to be ```.env/Scripts/python.exe```
