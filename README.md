@@ -11,7 +11,6 @@ pip install virtualenv
 virtualenv .env
 source .env/Scripts/activate
 pip install -r requirements.txt
-pip install nose coverage
 ```
 
 ### Intellij setup
