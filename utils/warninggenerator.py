@@ -9,11 +9,11 @@ def random_with_N_digits(n):
     return randint(range_start, range_end)
 
 
-"""
-    :start_day how many days after now you want to set to start
-    :end_day how many days after now you want to set to end
-"""
 def warning_generator(start_day, end_day):
+    """
+        :start_day how many days after now you want to set to start
+        :end_day how many days after now you want to set to end
+    """
     N = start_day
 
     date_N_days_ago = datetime.now() + timedelta(days=N)

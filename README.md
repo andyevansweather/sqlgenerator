@@ -5,6 +5,13 @@ Generates SQL scripts for warnings
 Fire up the component, fill in the boxes and install 
 
 ## Setup
+Make vitual environment:
+```bash
+python3 -m virtualenv env
+source env/Scripts/activate
+```
+
+
 To install, run the following command:
 ```bash
 pip install virtualenv
@@ -32,10 +39,24 @@ Project uses python 3
 Having followed the setup steps above, set the SDK for your project to be ```.env/Scripts/python.exe```
 
 ## Test
-No tests currently
+```bash
+behave
+```
+
+## Test with coverage
+```bash
+coverage run --source='utils,app.py' -m behave
+coverage html
+cd htmlcov
+python3 -m http.server 8888
+```
+
+[Coverage Report](http://localhost:8888/)
+
+
 
 ## Output data
 The service is expected to return the following data:
-```JSON
+```bash
 fakewarnings.sql
 ```

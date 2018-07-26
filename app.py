@@ -1,7 +1,12 @@
 #!/usr/bin/python'
-from utils.warninggenerator import warning_generator
-from flask import Flask, request, Response, render_template, send_from_directory
+from utils.make_sql_file import make_file
+from flask import Flask, request, render_template
 import os
+
+downloads_dir = 'static/downloads'
+
+if not os.path.exists(downloads_dir):
+    os.makedirs(downloads_dir)
 
 app = Flask(__name__)
 
@@ -11,25 +16,15 @@ def handle_data():
         startday = request.form['startday']
         endday = request.form['endday']
         make_file(startday, endday)
-        # return send_from_directory('static/downloads', 'fakewarnings.sql')
         return render_template('result.html')
     else:
         return render_template('index.html')
     
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def page():
-    render_template('index.html')
-        
-
-def make_file(start, end):
-    fo = open("static/downloads/fakewarnings.sql", "w+")
-
-    sql_script = warning_generator(int(start), int(end))
-
-    fo.write("%s" % sql_script)
-    fo.close()
+    return render_template('index.html')
     
 
 if __name__ == '__main__':
