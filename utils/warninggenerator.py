@@ -1,9 +1,16 @@
+"""logic for creating the SQL files"""
+
 #!/usr/bin/python'
 from datetime import datetime, timedelta
 from random import randint
 
 
 def random_with_N_digits(n):
+    """
+    how many days after now you want to set to start
+    :param n:
+    :return:
+    """
     range_start = 10**(n-1)
     range_end = (10**n)-1
     return randint(range_start, range_end)
@@ -11,8 +18,9 @@ def random_with_N_digits(n):
 
 def warning_generator(start_day, end_day):
     """
-        :start_day how many days after now you want to set to start
-        :end_day how many days after now you want to set to end
+    :param start_day: how many days after now you want to set to start
+    :param end_day: how many days after now you want to set to end
+    :return: SQL string
     """
     N = start_day
 
